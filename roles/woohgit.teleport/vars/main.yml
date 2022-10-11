@@ -1,0 +1,8 @@
+---
+
+teleport_ssh_enabled: true
+teleport_auth_enabled: false
+teleport_proxy_enabled: false
+teleport_auth_servers:
+  - ip_of_the_proxy_server
+teleport_auth_token: xxxx-yyyy-xxxx

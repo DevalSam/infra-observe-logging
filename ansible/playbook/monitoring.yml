@@ -1,0 +1,18 @@
+- hosts: testdrops
+  tasks: 
+    - name: Create The app directory for docker compose
+      ansible.builtin.file:
+        path: /app
+        state: directory
+        
+    - name: Copy required files for monitoring
+      ansible.builtin.copy:
+        src: "monitoring/{{ item }}"
+        dest: /app
+      loop:
+        - docker-compose.yaml
+        - alertmanager
+        - prometheus
+        - grafana
+        
+        

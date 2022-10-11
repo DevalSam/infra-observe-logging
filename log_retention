@@ -1,0 +1,111 @@
+
+
+#12. 	Set up log retention for Grafana Loki Indexes and Chunks with S3-compatible Digital ocean Object Storage. The logs aggregated by Loki are
+        to be stored and persisted on the Digital ocean Object Storage instead of locally on the Logging instance directly.
+ 
+	# This task is completed with the following action steps, 
+	#1. Add the Loki-congif.yml configuration file to the logging file directory
+	
+	
+	
+	auth_enabled: false
+
+	server:
+	  http_listen_port: 3100
+
+	distributor:
+	  ring:
+	    kvstore:
+	      store: memberlist
+
+	ingester:
+	  lifecycler:
+	    ring:
+	      kvstore:
+		store: memberlist
+	      replication_factor: 1
+	    final_sleep: 0s
+	  chunk_idle_period: 5m
+	  chunk_retain_period: 30s
+	  wal:
+	    enabled: true
+	    dir: /loki/wal
+
+	memberlist:
+	  abort_if_cluster_join_fails: false
+
+	  # Expose this port on all distributor, ingester
+	  # and querier replicas.
+	  bind_port: 7946
+
+	  # You can use a headless k8s service for all distributor,
+	  # ingester and querier components.
+	  join_members:
+	  - loki:7946
+
+	  max_join_backoff: 1m
+	  max_join_retries: 10
+	  min_join_backoff: 1s
+
+	schema_config:
+	  configs:
+	  - from: 2020-05-15
+	    store: boltdb-shipper
+	    object_store: s3
+	    schema: v11
+	    index:
+	      prefix: index_
+	      period: 24h
+
+	storage_config:
+	  boltdb_shipper:
+	    active_index_directory: /loki/index
+	    cache_location: /loki/index_cache
+	    resync_interval: 5s
+	    shared_store: s3
+	  aws:
+	    # Replace with 
+	    s3: s3://DO004ALZUMPFJLQDHLP6:dop_v1_d1c50c42be58ebc54a80d12b4df7b31f29b890a557f09e7d94ad7d889f70ef0f@ams3.digitaloceanspaces.com/
+	    testloki
+	    s3forcepathstyle: true
+
+	limits_config:
+	  enforce_metric_name: false
+	  reject_old_samples: true
+	  reject_old_samples_max_age: 168h
+
+	#2. Change the name of the file to Local-config.yml
+	 
+	#3. Ensure your docker-compose.yaml file in the looging file directory appears as shown below
+	
+	
+	
+	version: "3"
+
+	networks:
+	  loki:
+
+	services:
+	  loki:
+	    image: grafana/loki:2.4.1
+	    ports:
+	      - "3100:3100"
+	    command: -config.file=/etc/loki/local-config.yaml
+	    networks:
+	      - loki
+	    volumes:
+	      - ./loki:/etc/loki/
+	    restart: unless-stopped
+
+	  promtail:
+	    image: grafana/promtail:2.4.1
+	    volumes:
+	      - /var/log:/var/log
+	    command: -config.file=/etc/promtail/config.yml
+	    networks:
+	      - loki
+	      
+	      
+	#4. Run the playbook
+	    
+	    ansible-playbook playbook/logging.yml

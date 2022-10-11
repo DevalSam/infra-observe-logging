@@ -1,0 +1,33 @@
+
+
+#15.     Create Grafana dashboards for visualising CPU utilisation for each test instances and zeitgeist parachain. 
+#16.     Create Grafana dashboards for visualising Memory utilisation for each test instances and zeitgeist parachain.
+#17.     Create Grafana dashboard for visualising Zeitgeist metrics.
+
+
+                                                ############# 1. ############
+                                                            
+	# Ensure that node-exporter and Prometheus are properly installed, configured and running on the server or machine 
+	# which is to be obsreved.  
+	
+	# Head over to your grafana dashboard and add promotheus as a datasource for the node you'd like to monitor
+	
+	# in the URL box out in http://your_IP:port9090
+	
+	# at this point you can either create or import an already developed dashboard 
+	
+	                                       ############## 2. #############
+	
+	# To create a new dashboard from scratch click on add new panel
+	
+	# First select the type of visualization preferred ( we'll go with a graph for this first one ) 
+	
+	# now select a datasource whcih in this case should prometheus, since it has our node exporter plugged in
+	
+	# time to fill in the metrics which in this case is for our virtual machines total CPU time in seconds 
+	
+	# in the metrics box type in the desired type of metrics and add more panels as required and so on
+	
+	                                 
+	 
+	# or we can import a dashboard by clicking on import
