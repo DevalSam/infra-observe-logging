@@ -2,7 +2,7 @@
 infrastrcuture observability and logging as code
 
 
-Here we have detailed descriptions of how small network infrastucture which is built 
+Here we have a detailed description of a small network infrastucture which is built 
 using terraform just to serve as an object for observability 
 
 Then also the setup for monitoring, logging, security and what not using ansible playbooks 
