@@ -1,5 +1,4 @@
----
-- hosts: monitored
+- hosts: testdrops
   roles:
     - role: do1jlr.restic
       vars:
@@ -8,10 +7,10 @@
         restic_schedule_type: cronjob
         restic_repos:
           remote:
-            location: s3:https://wordspace.ams3.digitaloceanspaces.com/zeitgeist-backups/{{ inventory_hostname }}
+            location: "{{ lookup('env', 'LOCATION') }}"
             password: "{{ lookup('env', 'RESTIC_PASSWORD') }}"
-            aws_access_key: "{{ lookup('env', '36:e8:29:d1:5f:f1:f8:99:0c:49:42:f8:bb:e6:ea:a1') }}"
-            aws_secret_access_key: "{{ lookup('env', 'DO004ALZUMPFJLQDHLP6') }}"
+            aws_access_key: "{{ lookup('env', 'AWS_ACCESS_KEY_ID') }}"
+            aws_secret_access_key: "{{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}"
             aws_default_region: "{{ lookup('env', 'AWS_DEFAULT_REGION') }}"
             init: true
         restic_backups:
@@ -84,5 +83,3 @@
             schedule_weekday: 1
             schedule_month: '*'
         restic_no_log: false
-
-
