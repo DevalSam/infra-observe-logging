@@ -1,0 +1,20 @@
+[mon]
+host_ipaddress ansible_ssh_user=root ansible_private_key_file=~/.ssh/id_rsa
+
+[log]
+host_ipaddress ansible_ssh_user=root ansible_private_key_file=~/.ssh/id_rsa
+
+[monlog]
+host_ipaddress ansible_ssh_user=root ansible_private_key_file=~/.ssh/id_rsa
+host_ipaddress ansible_ssh_user=root ansible_private_key_file=~/.ssh/id_rsa
+
+[testdrops] 
+host_ipaddress ansible_ssh_user=root ansible_private_key_file=~/.ssh/id_rsa
+
+[para]
+host_ipaddress ansible_ssh_user=root ansible_private_key_file=~/.ssh/id_rsa
+
+[testpara]
+host_ipaddress ansible_ssh_user=root ansible_private_key_file=~/.ssh/id_rsa
+host_ipaddress ansible_ssh_user=root ansible_private_key_file=~/.ssh/id_rsa
+

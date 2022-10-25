@@ -7,14 +7,14 @@
 
                                                 ############# 1. ############
                                                             
-	# Ensure that node-exporter and Prometheus are properly installed, configured and running on the server or machine 
-	# which is to be obsreved.  
+	# Ensure that node-exporter and Prometheus are properly installed, configured and running on the servers or applications 
+	  you intend to obsreved.  
 	
-	# Head over to your grafana dashboard and add promotheus as a datasource for the node you'd like to monitor
+	# Head over to your grafana dashboard and add promotheus as a datasource you'd like to create a dashboard for 
 	
-	# in the URL box out in http://your_IP:port9090
+	# fill in the URL box with http://your_monitoring_server_IP:port9090
 	
-	# at this point you can either create or import an already developed dashboard 
+	# at this point you can either create or import an already developed dashboard suitable for the data/metrics you'd like to observe
 	
 	                                       ############## 2. #############
 	
@@ -22,7 +22,7 @@
 	
 	# First select the type of visualization preferred ( we'll go with a graph for this first one ) 
 	
-	# now select a datasource whcih in this case should prometheus, since it has our node exporter plugged in
+	# now select a datasource whcih in this case should be prometheus, since it has our node exporter plugged in
 	
 	# time to fill in the metrics which in this case is for our virtual machines total CPU time in seconds 
 	
@@ -30,4 +30,4 @@
 	
 	                                 
 	 
-	# or we can import a dashboard by clicking on import
+	# we can import a dashboard by clicking on "import" then either browse through or put in a number for prefered dashboard template 

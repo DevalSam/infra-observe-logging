@@ -65,8 +65,7 @@
 	    shared_store: s3
 	  aws:
 	    # Replace with 
-	    s3: s3://DO004ALZUMPFJLQDHLP6:dop_v1_d1c50c42be58ebc54a80d12b4df7b31f29b890a557f09e7d94ad7d889f70ef0f@ams3.digitaloceanspaces.com/
-	    testloki
+	    s3: s3://access_key:secret_access_key@custom_endpoint/bucket_name
 	    s3forcepathstyle: true
 
 	limits_config:
