@@ -12,6 +12,6 @@ provider "digitalocean" {
   token = var.do_token
 }
 
-data "digitalocean_ssh_key" "easykeys" {
-  name = "easykeys"
+data "digitalocean_ssh_key" "key_name" {
+  name = "key_name"
 }

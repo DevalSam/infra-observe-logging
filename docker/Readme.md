@@ -1,14 +1,8 @@
-Getting the best out of our docker files is really key, so in a attempt to get the best out of our docker files
+Getting the best out of our docker files is really key, so in an attempt to get the best out of our docker files
 we initiate the linting process using hadolint.
 
-we can implement this in two different ways, first we can get it done by pulling a hadolint docker file
-by running:
-
-$ docker pull hadolint/hadolint
-# or
-$ docker pull ghcr.io/hadolint/hadolint 
-
-and then putting all our docker files into the container and initiating our linting process from the container using the:
+we can implement this in two different ways, first if we are using the offial docker image,
+publicly available on docker hub  using the these commands:
 
 $ docker run --rm -i hadolint/hadolint < Dockerfile
 # or

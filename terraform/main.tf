@@ -7,7 +7,7 @@
 # name   = "test_1"
 # region = "nyc3"
 # size   = "s-1vcpu-1gb"
-# ssh_keys = ["36:e8:29:d1:5f:f1:f8:99:0c:49:42:f8:bb:e6:ea:a1"]
+# ssh_keys = ["your_digitalocean_public-key_fingerprint"]
 # }
 
 # # resource "digitalocean_droplet" "web2" {
@@ -15,7 +15,7 @@
 # # name   = "test_2"
 # # region = "nyc3"
 # # size   = "s-1vcpu-1gb"
-# # ssh_keys = ["36:e8:29:d1:5f:f1:f8:99:0c:49:42:f8:bb:e6:ea:a1"]
+# # ssh_keys = ["your_digitalocean_public-key_fingerprint"]
 # # }
 
 # # resource "digitalocean_droplet" "web3" {
@@ -23,7 +23,7 @@
 # # name   = "test_3"
 # # region = "nyc3"
 # # size   = "s-1vcpu-1gb"
-# # ssh_keys = ["36:e8:29:d1:5f:f1:f8:99:0c:49:42:f8:bb:e6:ea:a1"]
+# # ssh_keys = ["your_digitalocean_public-key_fingerprint"]
 # # }
 
 
@@ -34,7 +34,7 @@
 # # name   = "monitoring"
 # # region = "nyc3"
 # # size   = "s-1vcpu-1gb"
-# # ssh_keys = ["36:e8:29:d1:5f:f1:f8:99:0c:49:42:f8:bb:e6:ea:a1"]
+# # ssh_keys = ["your_digitalocean_public-key_fingerprint"]
 # # }
 
 # # resource "digitalocean_droplet" "web5" {
@@ -42,7 +42,7 @@
 # # name   = "logging"
 # # region = "nyc3"
 # # size   = "s-1vcpu-1gb"
-# # ssh_keys = ["36:e8:29:d1:5f:f1:f8:99:0c:49:42:f8:bb:e6:ea:a1"]
+# # ssh_keys = ["your_digitalocean_public-key_fingerprint"]
 # # }
 
 
@@ -53,7 +53,7 @@
 # # name   = "zeitgeist_para"
 # # region = "nyc3"
 # # size   = "s-4vcpu-8gb"
-# # ssh_keys = ["36:e8:29:d1:5f:f1:f8:99:0c:49:42:f8:bb:e6:ea:a1"]             
+# # ssh_keys = ["your_digitalocean_public-key_fingerprint"]             
 # # }
 
 # # resource "digitalocean_droplet" "web2" {
@@ -61,7 +61,7 @@
 # # name   = "teleport"
 # # region = "nyc3"
 # # size   = "s-1vcpu-1gb"
-# # ssh_keys = ["36:e8:29:d1:5f:f1:f8:99:0c:49:42:f8:bb:e6:ea:a1"]
+# # ssh_keys = ["your_digitalocean_public-key_fingerprint"]
 # # }
 
 
