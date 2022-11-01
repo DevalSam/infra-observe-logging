@@ -66,7 +66,7 @@ sudo apt install nginx
 
 	location / {
 	     proxy_pass http://prometheus_ip:9090;
-	     proxy_set_header Host $host
+	     proxy_set_header Host $host;	
 	}
 }
 
